@@ -1,0 +1,863 @@
+/* GENERAL STYLES */
+/*body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.text-navy {
+    color: #1a2530;
+}
+
+.btn-navy {
+    background-color: #1a2530;
+    transition: 0.3s;
+}
+.btn-navy:hover {
+    background-color: #ffc107;
+    color: #1a2530 !important;
+}
+
+/* NAVBAR 
+.navbar {
+    background-color: #0f172a;
+}
+.nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    color: #cbd5e1 !important;
+}
+.nav-link.active, .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* HERO SECTION 
+.hero-section {
+    min-height: 85vh;
+    background: radial-gradient(circle at 80% 20%, #1e293b 0%, #0f172a 100%);
+}
+
+.hero-bg-circle {
+    width: 380px;
+    height: 380px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+} 
+*/
+
+
+/* Typography & Core Variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Custom Text and Utility Classes */
+.text-navy { color: #21334b; }
+.fw-black { font-weight: 900; }
+
+/* Navbar Custom Styling */
+.nav-capsule {
+    background-color: #314157;
+    border-radius: 50px;
+    max-width: 950px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.nav-logo-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+.nav-custom-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.nav-custom-link.active, .nav-custom-link:hover {
+    color: #ffc107 !important;
+    opacity: 1;
+}
+.btn-white-capsule {
+    background-color: #ffffff;
+    color: #314157 !important;
+    border-radius: 30px;
+    padding: 8px 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-white-capsule:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+/* Hero Section Base Design */
+.hero-section {
+    min-height: 80vh;
+    padding: 60px 0;
+}
+.main-hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+}
+.text-highlight {
+    color: #fca311 !important;
+}
+.hero-sub-title {
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+}
+
+/* Button Custom Stylings */
+.btn-navy-pill {
+    background-color: #314157;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 10px 32px;
+    transition: all 0.3s ease;
+}
+.btn-navy-pill:hover {
+    background-color: #fca311;
+    color: #314157;
+}
+.btn-outline-navy-pill {
+    border: 1px solid #314157;
+    color: #314157;
+    border-radius: 30px;
+    padding: 10px 32px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.btn-outline-navy-pill:hover {
+    background-color: #314157;
+    color: #ffffff;
+}
+
+/* Social Media Button Overrides */
+.hero-social-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000 !important;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+.hero-social-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Fluid Golden Blob Shape Design */
+.fluid-gold-shape {
+    width: 480px;
+    height: 320px;
+    background-color: #ffb703;
+    border-radius: 43% 57% 64% 36% / 43% 40% 60% 57%; /* Custom Blob Curve */
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+.main-avatar {
+    max-width: 440px;
+    object-fit: contain;
+}
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 991px) {
+    .main-hero-title { font-size: 2.8rem; }
+    .hero-sub-title { font-size: 1.4rem; }
+    .fluid-gold-shape {
+        width: 320px;
+        height: 240px;
+    }
+    .main-avatar { max-width: 300px; }
+    .nav-capsule { border-radius: 20px; }
+}
+
+/* --- Hero section under--- */
+
+/* --- Ticker Container Window --- */
+.ticker-section-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    padding: 25px 0; /* ඇලවීමේදී කපී යාම වැළැක්වීමට padding */
+    background-color: #ffffff;
+}
+
+/* --- Slanted Angled Background Bar --- */
+.moving-ticker-bar {
+    width: 108vw; /* ඇලවීමේදී දෙපැත්තෙන් මදි නොවීම සඳහා වැඩිපුර 8vw ක් */
+    margin-left: -4vw;
+    background-color: #ffb703; /* නිවැරදි කහ පැහැය */
+    padding: 14px 0;
+    position: relative;
+    
+    /* CSS Clip-Path මඟින් පින්තූරයේ ඇති ඇලවෙන හැඩය (Angled Skew) ලබා ගැනීම */
+    clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+    
+    display: flex;
+    align-items: center;
+}
+
+/* --- Infinite Scrolling Track --- */
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite; /* නොනැවතී ගලායන ඇනිමේෂන් එක */
+}
+
+/* --- Individual Ticker Items --- */
+.ticker-item {
+    font-size: 1.15rem;
+    font-weight: 750; /* Ultra Bold Text */
+    color: #314157; /* පින්තූරයේ ඇති තද නිල් පාට */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0 40px; /* වචන අතර පරතරය */
+    letter-spacing: 0.5px;
+}
+
+/* --- 8-Spoked Flower Star Custom Icon --- */
+.ticker-flower {
+    color: #314157;
+    font-size: 1.6rem;
+    margin-right: 15px;
+    display: inline-block;
+    line-height: 1;
+    transform: translateY(-1px); /* අකුරු සමඟ මැදට පෙළගැස්වීමට */
+}
+
+/* --- Marquee Keyframe Animation --- */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.33%); /* බාධාවකින් තොරව loop වීමට තුනෙන් පංගුවක් පසුපසට */
+    }
+}
+
+/* Responsive adjust for mobile view */
+@media (max-width: 768px) {
+    .moving-ticker-bar {
+        padding: 10px 0;
+        clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    }
+    .ticker-item {
+        font-size: 0.95rem;
+        padding: 0 25px;
+    }
+    .ticker-flower {
+        font-size: 1.3rem;
+        margin-right: 10px;
+    }
+}
+
+
+
+.about-bg-circle {
+    width: 280px;
+    height: 280px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* --- About Me Graphic Elements --- */
+.about-avatar-wrapper {
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Perfect Round Yellow Graphic behind the illustration */
+.about-bg-circle {
+    width: 340px;
+    height: 340px;
+    background-color: #ffb703; /* Design එකේ තියෙන කහ පැහැය */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Image scaling to overlap nicely over the circle */
+.about-avatar-img {
+    max-height: 410px;
+    object-fit: contain;
+}
+
+/* --- About Me Typography Elements --- */
+.about-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #000000;
+    font-weight: 500; /* Regular to Medium Premium Touch */
+    text-align: justify;
+}
+
+/* Custom Navy Rounded-Pill Button Style */
+.btn-download-cv {
+    background-color: #314157; /* Portfolio එකේ තියෙන තද නිල් පැහැය */
+    color: #ffffff !important;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 10px rgba(49, 65, 87, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-download-cv:hover {
+    background-color: #ffb703; /* Hover කරද්දී කහ පැහැයට හැරීම */
+    color: #314157 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 183, 3, 0.35);
+}
+
+/* Responsive adjustments for Tablets and Mobile devices */
+@media (max-width: 991px) {
+    .about-avatar-wrapper {
+        height: 340px;
+        margin-bottom: 20px;
+    }
+    .about-bg-circle {
+        width: 260px;
+        height: 260px;
+    }
+    .about-avatar-img {
+        max-height: 320px;
+    }
+    .about-description {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+/* CIRCULAR PROGRESS BAR (CSS Only) */
+.skill-circle {
+    --p: 20;
+    --w: 85px;
+    width: var(--w);
+    height: var(--w);
+    border-radius: 50%;
+    position: relative;
+    display: grid;
+    place-content: center;
+    background: conic-gradient(#ffc107 calc(var(--p)*1%), #e2e8f0 0);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.skill-circle:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 8px;
+    background: #ffffff;
+}
+
+
+/* SKILLS SECTION STYLING */
+
+/* Skills Section Title Style */
+.skills-title-line {
+    font-size: 1.5rem;
+    color: #314157;
+}
+
+.small-title {
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
+}
+
+/* --- Technical Skills: Linear Progress Bar Styling --- */
+.custom-progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #ffb703; /* Base Yellow Color */
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%; /* JS එකෙන් animate වෙන්න මුලින් 0% දානවා */
+    background-color: #314157; /* Dark Blue Cover Layer */
+    border-radius: 6px 0 0 6px;
+    transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1); /* Premium Smooth Animation */
+}
+
+/* --- Professional Skills: Circular Pie Chart Styling --- */
+.circle-chart-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-pie {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Conic Gradient එකෙන් තමයි Pie එක හදන්නේ, JS එකෙන් අගයන් වෙනස් කරයි */
+    background: conic-gradient(#ffb703 0%, #314157 0%); 
+    transition: background 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+}
+
+.circle-inner-hole {
+    position: absolute;
+    width: 84px; /* රවුම ඇතුළත හිස් කර Donut හැඩය ගැනීමට */
+    height: 84px;
+    background-color: #ffffff; /* මැද සුදු පාට කිරිම */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+/* --- Global Sub Topic Styling with Yellow Line --- */
+.sub-topic-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* මැදට කිරීමට */
+    gap: 15px;               /* ඉර සහ අකුරු අතර පරතරය */
+    margin-bottom: 50px;     /* මාතෘකාවට පහළින් ඇති පරතරය */
+}
+
+/* කහ පාට තිරස් ඉර නිර්මාණය කිරීම */
+.sub-topic-line {
+    width: 35px;
+    height: 4px;
+    background-color: #ffb703; /* පින්තූරයේ ඇති කහ පැහැය */
+    border-radius: 2px;
+}
+
+/* මාතෘකාවේ අකුරු සැකසුම */
+.sub-topic-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #314157;           /* පින්තූරයේ ඇති තද නිල්/අළු පැහැය */
+    margin: 0;
+}
+
+/* වම් පැත්තට පමණක් බේරී තිබිය යුතු සෙක්ෂන් සඳහා (උදා: Contact Us, About Me) */
+.text-start-topic {
+    justify-content: flex-start !important;
+}
+
+
+
+
+
+/* CARDS */
+.card {
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* TOOLS capsule STYLING */
+.tool-capsule-wrapper {
+    width: 100px;
+}
+
+.tool-capsule {
+    background-color: #e2e8f0; /* සැහැල්ලු අළු පාට background එක */
+    border-radius: 50px; /* දෙපැත්ත වටකුරු capsule හැඩය */
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.tool-capsule:hover {
+    transform: scale(1.05); /* Mouse එක උඩට යද්දී ලස්සනට විශාල වෙන්න */
+}
+
+.tool-logo-circle {
+    width: 55px;
+    height: 55px;
+    background-color: #ffffff; /* මැද තියෙන සුදු පාට රවුම */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+    padding: 10px;
+}
+
+.tool-logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tool-percentage {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e293b; /* තද අළු/කළු පාට අකුරු */
+}
+
+.tool-name {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b; /* යටින් තියෙන tool එකේ නම */
+}
+
+
+
+/* ACADEMIC & PROFESSIONAL JOURNEY STYLING */
+.journey-title-line {
+    font-size: 1.8rem;
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+}
+
+/* Title eke issarahin thiyena orange line eka */
+.journey-title-line::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 3px;
+    background-color: #ffc107;
+}
+
+.journey-box {
+    background-color: #e9ecef; /* Image eke thiyena light grey background eka */
+    border: none;
+}
+
+.journey-icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Vam paththen thiyena thadi timeline line eka */
+.journey-item {
+    position: relative;
+    border-left: 2px solid #cbd5e1; /* Vertical thin line */
+}
+
+/* Thadi details thiyena thana adala vada lassanata border ekak daddi */
+.journey-item::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #94a3b8; /* Tikaak thadi line ekak vidihata */
+}
+
+.journey-duration {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.journey-item h6 {
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+/* LATEST PROJECTS STYLING */
+.project-title-line {
+    font-size: 1.8rem;
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+}
+
+/* වම් පැත්තේ තියෙන orange ඉර */
+.project-title-line::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 3px;
+    background-color: #ffc107;
+}
+
+/* Custom View All Projects Button */
+.btn-view-all {
+    background-color: #2e3a4e;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 6px 6px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-all:hover {
+    background-color: #1a2530;
+}
+
+.btn-view-all .arrow-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #ffc107;
+    color: #1a2530;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Styling */
+.project-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+.project-img-wrapper {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.project-img-wrapper img {
+    object-fit: cover;
+    height: 240px; /* Card එක ඇතුලේ ඉමේජ් එක ලස්සනට තියාගන්න */
+}
+
+/* Orange Tags / Badges */
+.badge-tag {
+    background-color: #ffc107;
+    color: #1a2530;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Card එකේ දකුණු පැත්තේ තියෙන රවුම් ඊතල Button එක */
+.project-arrow-btn {
+    width: 38px;
+    height: 38px;
+    background-color: #2e3a4e;
+    color: #ffffff !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-arrow-btn:hover {
+    background-color: #ffc107;
+    color: #1a2530 !important;
+}
+
+.project-card h5 {
+    font-size: 1.15rem;
+    letter-spacing: 0.2px;
+}
+
+
+
+/* CONTACT SECTION STYLING */
+.contact-title-line {
+    font-size: 1.8rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/* වම් පැත්තේ තියෙන orange ඉර */
+.contact-title-line::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 3px;
+    background-color: #ffc107;
+}
+
+/* Icons රවුම් */
+.contact-icon-circle {
+    width: 42px;
+    height: 42px;
+    background-color: #ffc107;
+    color: #344256;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Form Inputs */
+.custom-input {
+    background-color: #d9d9d9 !important; /* රූපයේ ඇති ලා අළු පැහැය */
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 12px 15px !important;
+    color: #333333 !important;
+    font-weight: 500;
+}
+
+.custom-input::placeholder {
+    color: #757575 !important;
+}
+
+.custom-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.4) !important;
+}
+
+/* Custom Submit Button */
+.btn-submit-custom {
+    background-color: #2e3a4e;
+    color: #ffffff;
+    border: 2px solid #ffc107;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 4px 4px 4px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-submit-custom:hover {
+    background-color: #1a2530;
+}
+
+.btn-submit-custom .btn-arrow-circle {
+    width: 38px;
+    height: 38px;
+    background-color: #ffc107;
+    color: #2e3a4e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+/* BOTTOM TICKER STYLING */
+.bottom-ticker {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+}
+
+.ticker-star {
+    font-size: 1.4rem;
+    color: #344256;
+}
+
+
+/* ADVANCED FOOTER STYLING */
+.advanced-footer {
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer-logo-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 420px;
+}
+
+/* Left Social Icons & Contact Icons Base Styling */
+.footer-social-icon, .footer-contact-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #ffc107; /* රූපයේ ඇති කහ පැහැය */
+    color: #1a2530 !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Advanced Hover Animations */
+.footer-social-icon:hover, .footer-contact-icon:hover {
+    background-color: #1a2530;
+    color: #ffc107 !important;
+    transform: translateY(-5px); /* මවුස් එක ලඟට ගෙනිච්චම ලස්සනට උඩට ඉස්සෙනවා */
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Quick Links Interactive List */
+.footer-links a {
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffc107; /* Hover වෙද්දී කහ පාට වෙනවා */
+    padding-left: 5px; /* මඳක් දකුණට slide වන ඉෆෙක්ට් එකක් */
+    transition: all 0.3s ease;
+}
+
+/* Bottom Bar Link Styling */
+.footer-bottom p {
+    letter-spacing: 0.5px;
+}
+
