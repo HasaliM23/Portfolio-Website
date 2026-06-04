@@ -354,34 +354,17 @@ body {
 }
 
 /* CIRCULAR PROGRESS BAR (CSS Only) */
-.skill-circle {
-    --p: 20;
-    --w: 85px;
-    width: var(--w);
-    height: var(--w);
-    border-radius: 50%;
-    position: relative;
-    display: grid;
-    place-content: center;
-    background: conic-gradient(#ffc107 calc(var(--p)*1%), #e2e8f0 0);
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-.skill-circle:before {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 8px;
-    background: #ffffff;
+/* ==========================================
+   🌌 PREMIUM DARK SKILLS SECTION STYLING
+   ========================================== */
+
+.premium-skills-dark {
+    background-color: #0b0f19 !important; /* Deep Rich Tech Dark Background */
+    color: #ffffff;
 }
 
-
-/* SKILLS SECTION STYLING */
-
-/* Skills Section Title Style */
-.skills-title-line {
-    font-size: 1.5rem;
-    color: #314157;
+.text-light-muted {
+    color: #94a3b8 !important; /* Soft Gray for Sub-headings */
 }
 
 .small-title {
@@ -393,7 +376,7 @@ body {
 .custom-progress-bar {
     width: 100%;
     height: 12px;
-    background-color: #ffb703; /* Base Yellow Color */
+    background-color: rgba(255, 255, 255, 0.08); /* Dark Slate Base Track */
     border-radius: 6px;
     overflow: hidden;
     position: relative;
@@ -401,10 +384,15 @@ body {
 
 .progress-fill {
     height: 100%;
-    width: 0%; /* JS එකෙන් animate වෙන්න මුලින් 0% දානවා */
-    background-color: #314157; /* Dark Blue Cover Layer */
+    width: 0%;
+    background-color: #fca311; /* Glowing Brand Yellow Color for Fill */
     border-radius: 6px 0 0 6px;
-    transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1); /* Premium Smooth Animation */
+    transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+    box-shadow: 0 0 10px rgba(252, 163, 17, 0.3); /* Glow Effect */
+}
+
+.bar-percent-text {
+    font-size: 0.95rem;
 }
 
 /* --- Professional Skills: Circular Pie Chart Styling --- */
@@ -421,20 +409,60 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    /* Conic Gradient එකෙන් තමයි Pie එක හදන්නේ, JS එකෙන් අගයන් වෙනස් කරයි */
-    background: conic-gradient(#ffb703 0%, #314157 0%); 
+    /* Conic Gradient Track - Base color is dark, Fill color is Yellow */
+    background: conic-gradient(#fca311 0%, rgba(255, 255, 255, 0.08) 0%); 
     transition: background 1.5s cubic-bezier(0.1, 1, 0.1, 1);
 }
 
 .circle-inner-hole {
     position: absolute;
-    width: 84px; /* රවුම ඇතුළත හිස් කර Donut හැඩය ගැනීමට */
-    height: 84px;
-    background-color: #ffffff; /* මැද සුදු පාට කිරිම */
+    width: 86px;
+    height: 86px;
+    background-color: #0b0f19; /* මැද කොටස Section Background එකට සමාන කළා (Donut Shape) */
     border-radius: 50%;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.circle-percent-text {
+    font-size: 1.15rem;
+    color: #ffffff; /* Percentage text updated to White */
+    letter-spacing: -0.5px;
+}
+
+/* --- Global Sub Topic Styling with Yellow Line --- */
+.sub-topic-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;      
+    margin-bottom: 50px;    
+}
+
+.sub-topic-line {
+    width: 35px;
+    height: 4px;
+    background-color: #fca311;
+    border-radius: 2px;
+}
+
+.sub-topic-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff; /* Title updated to White */
+    margin: 0;
+}
+
+.text-start-topic {
+    justify-content: flex-start !important;
+}
+
+.small-title {
+    font-size: 0.95rem;
+    letter-spacing: -0.3px;
+}
 
 /* --- Global Sub Topic Styling with Yellow Line --- */
 .sub-topic-container {
@@ -492,11 +520,14 @@ body {
     align-items: center;
     gap: 12px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease-in-out;
+    /* 🛠 color සහ background-color සුමටව මාරු වෙන්න transition එක අලුත් කලා */
+    transition: transform 0.3s ease, background-color 0.3s ease; 
 }
 
+/* 🛠 HOVER EFFECT: Mouse එක උඩට යද්දී සිදුවන වෙනස්කම් */
 .tool-capsule:hover {
-    transform: scale(1.05); /* Mouse එක උඩට යද්දී ලස්සනට විශාල වෙන්න */
+    transform: scale(1.05); /* ලස්සනට ටිකක් විශාල වීම */
+    background-color: #314157; /* Capsule එක තද නිල් පාට වීම */
 }
 
 .tool-logo-circle {
@@ -522,6 +553,12 @@ body {
     font-weight: 700;
     font-size: 1.1rem;
     color: #1e293b; /* තද අළු/කළු පාට අකුරු */
+    transition: color 0.3s ease; /* අකුරු පාට මාරුවීම සුමට කිරීමට */
+}
+
+/* 🛠 HOVER EFFECT (PERCENTAGE): Capsule එක hover වෙද්දී % අකුරු කහ පාට වීම */
+.tool-capsule:hover .tool-percentage {
+    color: #ffb703; 
 }
 
 .tool-name {
@@ -529,9 +566,13 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     color: #64748b; /* යටින් තියෙන tool එකේ නම */
+    transition: color 0.3s ease;
 }
 
-
+/* 🛠 HOVER EFFECT (NAME): Capsule එක hover වෙද්දී යටින් තියෙන නම තද නිල් පාටින් කැපී පෙනීම */
+.tool-capsule-wrapper:hover .tool-name {
+    color: #314157;
+}
 
 /* ACADEMIC & PROFESSIONAL JOURNEY STYLING */
 .journey-title-line {
@@ -554,8 +595,10 @@ body {
 }
 
 .journey-box {
-    background-color: #e9ecef; /* Image eke thiyena light grey background eka */
-    border: none;
+    /* 🛠 බොක්ස් එක සුදු පසුබිමේ පැහැදිලිව පෙනෙන්න වර්ණය තද කලා */
+    background-color: #f1f5f9; 
+    /* 🛠 ව්‍යුහය තවත් කැපිලා පෙනෙන්න ලස්සන soft border එකක් දැම්මා */
+    border: 1px solid #e2e8f0; 
 }
 
 .journey-icon-circle {
@@ -733,6 +776,22 @@ body {
     flex-shrink: 0;
 }
 
+/* --- CONTACT LINKS HOVER STYLING --- */
+.contact-link {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Mouse එක ලින්ක් එක උඩට යද්දී සුමටව සිදුවන වෙනස්කම */
+.contact-link:hover {
+    transform: translateX(5px); /* දකුණු පැත්තට සෙල්සිවුස් 5ක වගේ කුඩා චලනයක් */
+}
+
+.contact-link:hover .text-light {
+    opacity: 1 !important; /* අකුරු වල අඳුරු ගතිය නැතිවී සම්පූර්ණයෙන්ම සුදු පැහැ වීම */
+    color: #ffb703 !important; /* 💡 අවශ්‍ය නම් පමණක් ලින්ක් එක hover වෙද්දී කහ පාට කරන්න මේ ලයින් එක තියාගන්න (නැත්නම් අයින් කරන්න) */
+}
+
 /* Form Inputs */
 .custom-input {
     background-color: #d9d9d9 !important; /* රූපයේ ඇති ලා අළු පැහැය */
@@ -861,3 +920,153 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* --- RESUME BUTTON PULSE EFFECT --- */
+.resume-pulse-btn {
+    position: relative;
+    /* සිනිදුවට ඇනිමේෂන් එක වෙන්න */
+    animation: premiumPulse 2s infinite ease-in-out;
+    box-shadow: 0 0 0 0 rgba(255, 183, 3, 0.7);
+    transition: all 0.3s ease;
+}
+
+/* Mouse එක උඩට ගෙනිච්චම Pulse එක නතර වෙලා සාමාන්‍ය විදිහට තියාගන්න */
+.resume-pulse-btn:hover {
+    animation: none;
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Pulse Glow වෙන විදිහ සකසන Keyframes */
+@keyframes premiumPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 183, 3, 0.5);
+    }
+    50% {
+        transform: scale(1.04); /* බොත්තම ඉතාම සියුම්ව විශාල වීම */
+        box-shadow: 0 0 12px 6px rgba(255, 183, 3, 0); /* වටේට ආලෝකය විහිදී යාම */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 183, 3, 0);
+    }
+}
+
+/* Base Button Setup */
+.hero-social-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background-color: #fca311;
+    color: #111111 !important; /* Icon එක කළු පාටින් පැහැදිලිව පේන්න */
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔄 සාමාන්‍ය වෙලාවට දිගටම Blink (Pulse) වීම */
+.continuous-blink {
+    /* තත්පර 2න් 2කට නොනවතී Blink වෙනවා (Breathing Effect) */
+    animation: constantGlowBlink 2s infinite ease-in-out;
+}
+
+/* 🛑 Hover කරන විට Blink වෙන එක නතර වී ස්ථාවර (Glow) වීම */
+.continuous-blink:hover {
+    animation-play-state: paused; /* Blink වෙන එක තාවකාලිකව නවතිනවා */
+    transform: scale(1.12); /* ලාවට ලොකු වෙනවා */
+    box-shadow: 0 0 25px rgba(253, 163, 17, 0.9); /* ස්ථාවර තද Glow එකක් ලැබෙනවා */
+}
+
+/* ✨ Continuous Blink Keyframes */
+@keyframes constantGlowBlink {
+    0% {
+        box-shadow: 0 0 5px rgba(253, 163, 17, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        /* මැදදී ලස්සනට Glow එක වැඩි වී Button එක ලාවට ලොකු වෙනවා */
+        box-shadow: 0 0 20px rgba(253, 163, 17, 0.8), 0 0 30px rgba(253, 163, 17, 0.4);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(253, 163, 17, 0.4);
+        transform: scale(1);
+    }
+}
+
+
+/* 🌌 Navbar සහ Hero දෙකම වසා ගන්නා පොදු Dark පසුබිම */
+.full-top-dark-zone {
+    background-color: #0b0f19 !important; /* Deep Rich Tech Dark */
+    position: relative;
+    padding-bottom: 50px; /* Hero එකට යටින් ලස්සන ඉඩක් තැබීමට */
+}
+
+/* 🧼 Navbar Capsule එක Dark Theme එකට ගැලපීම (Glass Effect) */
+.nav-capsule {
+    background: rgba(255, 255, 255, 0.03) !important; /* ඉතාම ලාවට පෙනෙන සුදු පැහැය */
+    backdrop-filter: blur(10px); /* පිටුපස බ්ලර් කරන සුපිරි ඉෆෙක්ට් එක */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* සිහින් Border එකක් */
+    border-radius: 50px;
+}
+
+/* Navbar Links Hover Effect */
+.nav-custom-link {
+    transition: color 0.3s ease;
+}
+.nav-custom-link:hover {
+    color: #fca311 !important; /* Hover කරද්දී කහ පාට වීම */
+}
+
+/* Navbar Resume Button (Premium Look) */
+.btn-premium-white-capsule {
+    background-color: #ffffff;
+    color: #0b0f19 !important;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding: 6px 20px;
+    transition: all 0.3s ease;
+}
+.btn-premium-white-capsule:hover {
+    background-color: transparent;
+    color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* --- Hero Section Elements Adjustments --- */
+.text-light-muted { color: #94a3b8; }
+.text-warning-light { color: #fca311; }
+
+.btn-premium-gold {
+    background-color: #fca311;
+    color: #0b0f19;
+    border: 2px solid #fca311;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-premium-gold:hover {
+    background-color: transparent;
+    color: #fca311;
+    box-shadow: 0 0 15px rgba(253, 163, 17, 0.4);
+}
+
+.btn-outline-premium-white {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.btn-outline-premium-white:hover {
+    background-color: #ffffff;
+    color: #0b0f19;
+}
+
+.fluid-gold-shape {
+    filter: drop-shadow(0 0 40px rgba(253, 163, 17, 0.25));
+    opacity: 0.85;
+}
